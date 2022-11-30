@@ -2,12 +2,81 @@
   @include flex();
   position: fixed;
   top: 0;
-  max-width: $mw;
   width: 100%;
   z-index: 1;
 }
 
-.header__container {
-  @include flex($justify: space-between);
-  padding: calc-rem(18px) $px;
+.header__left {
+  @include flex();
+  column-gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.header__scroll {
+  background-color: rgba($color: $color-white, $alpha: 0.9);
+  box-shadow: 0 3px 4px $color-grey-200;
+  & .header__container {
+    padding: calc-rem(2px) $px;
+  }
+}
+
+.header__burger {
+  position: relative;
+  display: none;
+  width: 23px;
+  height: 35px;
+  cursor: pointer;
+
+  span.open {
+    background-color: $color-grey-600;
+  }
+
+  span {
+    position: absolute;
+    background-color: $color-grey-600;
+    height: 2px;
+    border-radius: 2px;
+    width: 100%;
+    top: 50%;
+    transition: 0.4s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      border-radius: 2px;
+      top: 5px;
+      transition: 0.4s;
+      background-color: inherit;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      border-radius: 2px;
+      bottom: 5px;
+      transition: 0.4s;
+      background-color: inherit;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.burger_open {
+  span::before {
+    width: 0;
+    transition: 0.4s;
+  }
+
+  span::after {
+    width: 0;
+    transition: 0.4s;
+  }
 }

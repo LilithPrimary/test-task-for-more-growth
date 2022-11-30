@@ -1,8 +1,8 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDev = true;
 
 const devServer = () =>
@@ -14,30 +14,30 @@ const devServer = () =>
           hot: false,
           port: 8080,
           static: {
-            directory: path.join(__dirname, "public"),
+            directory: path.join(__dirname, 'public'),
           },
         },
       };
 
 module.exports = ({ develop }) => ({
-  mode: develop ? "development" : "production",
+  mode: develop ? 'development' : 'production',
   entry: {
-    index_: "./src/index.js",
+    index_: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].[contenthash].js",
-    assetModuleFilename: "assets/[hash][ext]",
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[contenthash].js',
+    assetModuleFilename: 'assets/[hash][ext]',
   },
   module: {
     rules: [
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(s[ac]|c)ss$/i,
@@ -45,38 +45,38 @@ module.exports = ({ develop }) => ({
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: "",
+              publicPath: '',
             },
           },
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
         ],
       },
     ],
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: ['.ts', '.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./src/index.html",
-      chunks: ["index_"],
+      filename: 'index.html',
+      template: './src/index.html',
+      chunks: ['index_'],
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: '[name].[contenthash].css',
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "./src/assets"),
-          to: path.resolve(__dirname, "./dist/assets"),
+          from: path.resolve(__dirname, './src/assets'),
+          to: path.resolve(__dirname, './dist/assets'),
         },
       ],
     }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   ...devServer(develop),
 });

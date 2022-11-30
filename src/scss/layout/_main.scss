@@ -10,9 +10,17 @@
 .section__items {
   max-width: calc-rem(540px);
 
+  @media screen and (max-width: 900px) {
+    max-width: calc-rem(550px);
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 0 auto;
+    text-align: center;
+  }
+
   .intro & {
     max-width: calc-rem(445px);
-    padding: 49px 0 38px;
   }
 
   .pricing & {
@@ -30,11 +38,23 @@
   .hero & {
     margin-bottom: 20px;
     @include medium50;
+
+    @media screen and (max-width: 900px) {
+      @include medium36;
+    }
+
+    @media screen and (max-width: 500px) {
+      @include medium24;
+    }
   }
 
   .card & {
     @include medium16;
     margin: 10px 0 6px;
+  }
+
+  @media screen and (max-width: 500px) {
+    @include medium18;
   }
 }
 
@@ -51,6 +71,11 @@
     gap: 14px;
     color: $color-blue-500;
     margin: 20px 0 69px;
+
+    @media screen and (max-width: 1170px) {
+      @include regular14;
+      margin: 20px 0 30px;
+    }
   }
 
   .card & {
@@ -66,43 +91,96 @@
     @include regular16;
     margin-bottom: 35.82px;
   }
+
+  @media screen and (max-width: 900px) {
+    margin-bottom: 30px;
+  }
 }
 
 .hero {
-  height: calc-rem(1118px);
   width: 100%;
-  background-image: url("../assets/svg/designer_1.svg");
+  background-image: url('../assets/svg/designer_1.svg');
   background-repeat: no-repeat;
   background-size: calc-rem(1490px) calc-rem(1161px);
   background-position: bottom 0 right calc-rem(-466px);
-  padding-top: 309px;
-  padding-left: 162.4px;
+  padding: calc-rem(309px) $px calc-rem(388px);
+
+  @media screen and (max-width: 1170px) {
+    background-size: calc-rem(1000px);
+    background-position: bottom 0 right calc-rem(-400px);
+    padding: calc-rem(220px) $px calc-rem(50px);
+  }
+
+  @media screen and (max-width: 900px) {
+    background-size: calc-rem(1000px);
+    background-position: bottom 0 right calc-rem(-400px);
+    padding: calc-rem(220px) $px calc-rem(50px);
+  }
+
+  @media screen and (max-width: 768px) {
+    background-size: calc-rem(500px);
+    background-position: bottom 0 right calc-rem(-150px);
+    padding: calc-rem(100px) $px calc-rem(300px);
+  }
+}
+
+.hero__wrapper {
+  width: 100%;
+  max-width: calc-rem(1115.2px);
+  margin: 0 auto;
 }
 
 .hero__btns {
   @include flex(flex-start);
-  gap: 30px;
+  flex-wrap: wrap;
+  column-gap: 30px;
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    row-gap: 15px;
+  }
 }
 
 .info {
-  padding-top: 107.65px;
-  padding-bottom: 108px;
+  background-image: url('../assets/svg/undraw_mobile_login_ikmv.svg');
+  background-repeat: no-repeat;
+  background-position: top 109px right 165px;
+  padding: calc-rem(160px) $px;
+
+  @media screen and (max-width: 1200px) {
+    background-position: bottom 0 right 30px;
+    padding: calc-rem(120px) $px;
+  }
+
+  @media screen and (max-width: 960px) {
+    background-size: 400px;
+    background-position: bottom 0 right 30px;
+    padding: calc-rem(50px) $px calc-rem(170px);
+  }
+
+  @media screen and (max-width: 768px) {
+    background-size: calc-rem(300px);
+    background-position: bottom 0 center;
+    padding: calc-rem(20px) $px calc-rem(180px);
+  }
 }
 
 .info__wrapper {
   width: 100%;
-  height: 525px;
-  background-image: url("../assets/svg/undraw_mobile_login_ikmv.svg");
-  background-repeat: no-repeat;
-  background-position: top 0 right 0;
-  background-size: contain;
+  max-width: calc-rem(1110px);
+
   margin: 0 auto;
   @include flex($justify: flex-start);
 }
 
 .info__cards {
   @include flex($justify: flex-start);
+  flex-wrap: wrap;
   gap: calc-rem(30px);
+
+  @media screen and (max-width: 617px) {
+    justify-content: center;
+  }
 }
 
 .card {
@@ -116,26 +194,50 @@
 }
 
 .intro {
-  padding: 122.44px calc($px + 5px) 131px calc($px + 25px);
+  background-image: url('../assets/svg/undraw_happy_news_hxmt.svg');
+  background-repeat: no-repeat;
+  background-position: top 122px left 190px;
+  padding: calc-rem(172px) $px calc-rem(168px);
+
+  @media screen and (max-width: 1170px) {
+    background-position: top 122px left 30px;
+    padding: calc-rem(172px) $px calc-rem(168px);
+  }
+
+  @media screen and (max-width: 960px) {
+    background-size: 400px;
+    background-position: top 0 left 30px;
+    padding: calc-rem(350px) $px calc-rem(0px);
+  }
+
+  @media screen and (max-width: 768px) {
+    background-position: bottom 0 center;
+    padding: calc-rem(70px) $px calc-rem(300px);
+  }
+
+  @media screen and (max-width: 450px) {
+    background-size: 250px;
+    padding: calc-rem(70px) $px calc-rem(200px);
+  }
 }
 
 .intro__wrapper {
   width: 100%;
-  height: 315.85px;
-  background-image: url("../assets/svg/undraw_happy_news_hxmt.svg");
-  background-repeat: no-repeat;
-  background-position: top 0 left 0;
-  background-size: contain;
+  max-width: calc-rem(1100px);
   margin: 0 auto;
   @include flex($justify: flex-end);
 }
 
 .pricing {
   width: 100%;
-  background-image: url("../assets/svg/Rectangle.svg");
+  background-image: url('../assets/svg/Rectangle.svg');
   background-position: center top 0;
   background-repeat: no-repeat;
-  padding: 237.61px 0 172.73px;
+  padding: 237px $px 172.73px;
+
+  @media screen and (max-width: 768px) {
+    padding: 150px $px 100px;
+  }
 }
 
 .pricing__price-block {

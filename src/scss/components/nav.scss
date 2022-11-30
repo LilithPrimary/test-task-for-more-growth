@@ -1,10 +1,35 @@
-.nav__items {
+.nav__links {
   @include flex();
-  gap: calc-rem(60px);
+  column-gap: calc-rem(60px);
   @include regular14;
   color: $color-blue-500;
 
   .footer & {
     color: $color-blue-300;
   }
+}
+
+.header__nav {
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    @include flex();
+    width: 80vw;
+    height: 100vh;
+    background-color: $color-blue-200;
+    left: -200vw;
+    top: 0;
+    transition: 0.5s;
+  }
+
+  .nav__links {
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      row-gap: calc-rem(30px);
+      @include regular18;
+    }
+  }
+}
+
+.nav_open {
+  left: 0;
 }

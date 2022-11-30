@@ -47,6 +47,18 @@
   line-height: 26px;
 }
 
+@mixin medium18() {
+  font-size: 18px;
+  font-weight: $font-medium;
+  line-height: 30px;
+}
+
+@mixin medium24() {
+  font-size: 24px;
+  font-weight: $font-medium;
+  line-height: 36px;
+}
+
 @mixin medium36() {
   font-size: 36px;
   font-weight: $font-medium;

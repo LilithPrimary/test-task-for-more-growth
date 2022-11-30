@@ -6,10 +6,15 @@
   border-radius: 2px;
   width: calc-rem(189px);
   transition: 0.3s;
+  // flex-shrink: 0;
 
   .header & {
     width: calc-rem(160px);
     margin-left: calc-rem(85px);
+
+    @media screen and (max-width: 500px) {
+      margin-left: 15px;
+    }
   }
 
   .hero & {

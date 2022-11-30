@@ -3,6 +3,10 @@ body {
   @include flex($direction: column);
 }
 
+.body_disable {
+  overflow: hidden;
+}
+
 .container {
   width: 100%;
   max-width: $mw;
@@ -10,11 +14,17 @@ body {
 
   .header & {
     @include flex($justify: space-between);
+    padding: calc-rem(18px) $px;
+    max-width: calc-rem(1170px);
+    transition: 0.3s;
   }
 
   .footer & {
     background-color: $color-blue-100;
     padding: 60px $px 26px;
+    @media screen and (max-width: 500px) {
+      padding-top: 20px;
+    }
   }
 }
 

@@ -4,10 +4,27 @@
 
 .footer__part {
   @include flex($justify: space-between);
+  max-width: calc-rem(1110px);
+  margin: 0 auto;
 }
 
 .footer__top {
   margin-bottom: calc-rem(61px);
+  flex-wrap: wrap;
+  @media screen and (max-width: 500px) {
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: calc-rem(30px);
+
+    .logo {
+      order: -1;
+      margin: 0 20px;
+    }
+
+    .copyright {
+      order: 3;
+    }
+  }
 }
 
 .copyright {
@@ -17,10 +34,16 @@
 
 .footer__bottom {
   position: relative;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
 }
 
 .footer__bottom::before {
-  content: "";
+  content: '';
   position: absolute;
   top: calc-rem(-20px);
   left: 50%;
