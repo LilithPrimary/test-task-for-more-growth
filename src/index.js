@@ -1,6 +1,14 @@
 import './scss/main.scss';
 
 const changeHeaderScroll = () => {
+  const closeMenu = () => {
+    if (nav.classList.contains('nav_open')) {
+      nav.classList.remove('nav_open');
+      burger.classList.remove('burger_open');
+      document.body.classList.remove('body_disable');
+    }
+  };
+
   setTimeout(() => {
     document.body.classList.remove('preload');
   }, 700);
@@ -9,6 +17,7 @@ const changeHeaderScroll = () => {
   const burger = document.querySelector('.header__burger');
   const nav = document.querySelector('.nav');
   const navLinks = document.querySelectorAll('.header__nav a.nav__link');
+  const shadow = document.querySelector('.nav__shadow');
 
   window.addEventListener('scroll', () => {
     if (!window.scrollY) {
@@ -20,21 +29,14 @@ const changeHeaderScroll = () => {
   });
 
   burger.addEventListener('click', () => {
-    console.log(navLinks);
     burger.classList.toggle('burger_open');
     nav.classList.toggle('nav_open');
     document.body.classList.toggle('body_disable');
   });
 
-  navLinks.forEach((el) =>
-    el.addEventListener('click', () => {
-      if (nav.classList.contains('nav_open')) {
-        nav.classList.remove('nav_open');
-        burger.classList.remove('burger_open');
-        document.body.classList.remove('body_disable');
-      }
-    })
-  );
+  shadow.addEventListener('click', closeMenu);
+
+  navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 };
 
 changeHeaderScroll();
