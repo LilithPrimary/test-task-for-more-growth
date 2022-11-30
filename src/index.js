@@ -1,6 +1,10 @@
 import './scss/main.scss';
 
 const changeHeaderScroll = () => {
+  setTimeout(() => {
+    document.body.classList.remove('preload');
+  }, 700);
+
   const header = document.querySelector('.header');
   const burger = document.querySelector('.header__burger');
   const nav = document.querySelector('.nav');

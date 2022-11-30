@@ -10,7 +10,7 @@
   @include flex();
   column-gap: 10px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header__scroll {
@@ -78,5 +78,51 @@
   span::after {
     width: 0;
     transition: 0.4s;
+  }
+}
+
+.nav__shadow {
+  position: fixed;
+  background-color: $color-grey-700;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  animation: shadow-disappere 0.4s ease-in forwards;
+}
+
+.nav_open ~ .nav__shadow {
+  animation: shadow-appere 0.7s ease-in 0.2s forwards;
+}
+
+@keyframes shadow-appere {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  1% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0.7;
+    visibility: visible;
+  }
+}
+
+@keyframes shadow-disappere {
+  0% {
+    opacity: 0.7;
+    visibility: visible;
+  }
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
