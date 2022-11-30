@@ -28,9 +28,9 @@ body.preload * {
 
   .footer & {
     background-color: $color-blue-100;
-    padding: 60px $px 26px;
+    padding: calc-rem(60px) $px calc-rem(26px);
     @media screen and (max-width: 500px) {
-      padding-top: 20px;
+      padding-top: calc-rem(20px);
     }
   }
 }

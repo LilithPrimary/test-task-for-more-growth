@@ -26,7 +26,7 @@
   .pricing & {
     @include flex($direction: column);
     text-align: center;
-    max-width: 600px;
+    max-width: calc-rem(600px);
     margin: 0 auto;
   }
 }
@@ -50,7 +50,7 @@
 
   .card & {
     @include medium16;
-    margin: 10px 0 6px;
+    margin: calc-rem(10px) 0 calc-rem(6px);
   }
 
   @media screen and (max-width: 500px) {
@@ -70,11 +70,11 @@
     @include regular18;
     gap: 14px;
     color: $color-blue-500;
-    margin: 20px 0 69px;
+    margin: calc-rem(20px) 0 calc-rem(69px);
 
     @media screen and (max-width: 1170px) {
       @include regular14;
-      margin: 20px 0 30px;
+      margin: calc-rem(20px) 0 calc-rem(30px);
     }
   }
 
@@ -144,7 +144,7 @@
 .info {
   background-image: url('../assets/svg/undraw_mobile_login_ikmv.svg');
   background-repeat: no-repeat;
-  background-position: top 109px right 165px;
+  background-position: top calc-rem(109px) right calc-rem(165px);
   padding: calc-rem(160px) $px;
 
   @media screen and (max-width: 1200px) {
@@ -153,9 +153,9 @@
   }
 
   @media screen and (max-width: 960px) {
-    background-size: 400px;
-    background-position: bottom 0 right 30px;
-    padding: calc-rem(50px) $px calc-rem(170px);
+    background-size: calc-rem(400px);
+    background-position: bottom 0 right calc-rem(70px);
+    padding: calc-rem(50px) $px calc-rem(225px);
   }
 
   @media screen and (max-width: 768px) {
@@ -196,18 +196,18 @@
 .intro {
   background-image: url('../assets/svg/undraw_happy_news_hxmt.svg');
   background-repeat: no-repeat;
-  background-position: top 122px left 190px;
+  background-position: top calc-rem(122px) left calc-rem(190px);
   padding: calc-rem(172px) $px calc-rem(168px);
 
   @media screen and (max-width: 1170px) {
-    background-position: top 122px left 30px;
+    background-position: top calc-rem(122px) left calc-rem(30px);
     padding: calc-rem(172px) $px calc-rem(168px);
   }
 
   @media screen and (max-width: 960px) {
-    background-size: 400px;
-    background-position: top 0 left 30px;
-    padding: calc-rem(350px) $px calc-rem(0px);
+    background-size: calc-rem(300px);
+    background-position: center left calc-rem(30px);
+    padding: calc-rem(50px) $px calc-rem(0px);
   }
 
   @media screen and (max-width: 768px) {
@@ -216,7 +216,7 @@
   }
 
   @media screen and (max-width: 450px) {
-    background-size: 250px;
+    background-size: calc-rem(250px);
     padding: calc-rem(70px) $px calc-rem(200px);
   }
 }
@@ -233,10 +233,10 @@
   background-image: url('../assets/svg/Rectangle.svg');
   background-position: center top 0;
   background-repeat: no-repeat;
-  padding: 237px $px 172.73px;
+  padding: calc-rem(237px) $px calc-rem(172.73px);
 
   @media screen and (max-width: 768px) {
-    padding: 150px $px 100px;
+    padding: calc-rem(150px) $px calc-rem(100px);
   }
 }
 
