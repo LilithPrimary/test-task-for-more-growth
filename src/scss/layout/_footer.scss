@@ -1,0 +1,43 @@
+.footer {
+  width: 100%;
+}
+
+.footer__part {
+  @include flex($justify: space-between);
+}
+
+.footer__top {
+  margin-bottom: calc-rem(61px);
+}
+
+.copyright {
+  color: $color-grey-400;
+  @include medium14;
+}
+
+.footer__bottom {
+  position: relative;
+}
+
+.footer__bottom::before {
+  content: "";
+  position: absolute;
+  top: calc-rem(-20px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: $color-grey-200;
+}
+
+.footer__icon {
+  width: calc-rem(16px);
+  height: calc-rem(16px);
+  fill: $color-grey-300;
+}
+
+.footer__social-networks {
+  @include flex();
+  gap: calc-rem(30px);
+}

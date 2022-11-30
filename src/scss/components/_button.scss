@@ -1,0 +1,45 @@
+.btn {
+  height: calc-rem(26px);
+  color: $color-white;
+  background-color: $color-blue-800;
+  @include medium12;
+  border-radius: 2px;
+  width: calc-rem(189px);
+  transition: 0.3s;
+
+  .header & {
+    width: calc-rem(160px);
+    margin-left: calc-rem(85px);
+  }
+
+  .hero & {
+    height: 36px;
+    @include medium16;
+  }
+
+  .pricing & {
+    height: 32px;
+    @include medium14;
+  }
+
+  .footer & {
+    width: calc-rem(109px);
+    margin-left: calc-rem(12px);
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px $color-blue-200;
+    color: $color-blue-200;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn__light {
+  background-color: transparent;
+  color: $color-grey-700;
+  border: solid $color-grey-700 2px;
+  width: calc-rem(190px);
+}

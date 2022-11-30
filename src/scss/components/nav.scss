@@ -1,0 +1,10 @@
+.nav__items {
+  @include flex();
+  gap: calc-rem(60px);
+  @include regular14;
+  color: $color-blue-500;
+
+  .footer & {
+    color: $color-blue-300;
+  }
+}

@@ -1,0 +1,32 @@
+body {
+  font-family: Roboto;
+  @include flex($direction: column);
+}
+
+.container {
+  width: 100%;
+  max-width: $mw;
+  margin: 0 auto;
+
+  .header & {
+    @include flex($justify: space-between);
+  }
+
+  .footer & {
+    background-color: $color-blue-100;
+    padding: 60px $px 26px;
+  }
+}
+
+.link {
+  transition: 0.3s;
+
+  &:hover {
+    color: $color-blue-500;
+    fill: $color-blue-500;
+
+    .header & {
+      color: $color-blue-200;
+    }
+  }
+}

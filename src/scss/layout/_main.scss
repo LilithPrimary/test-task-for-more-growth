@@ -1,0 +1,163 @@
+.main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 0 $px;
+}
+
+.section__items {
+  max-width: calc-rem(540px);
+
+  .intro & {
+    max-width: calc-rem(445px);
+    padding: 49px 0 38px;
+  }
+
+  .pricing & {
+    @include flex($direction: column);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.title {
+  color: $color-grey-700;
+  @include medium36;
+
+  .hero & {
+    margin-bottom: 20px;
+    @include medium50;
+  }
+
+  .card & {
+    @include medium16;
+    margin: 10px 0 6px;
+  }
+}
+
+.text {
+  @include flex($align: flex-start, $direction: column);
+  gap: 10px;
+  @include regular16;
+  color: $color-grey-600;
+  margin-bottom: 80px;
+  margin-top: 16px;
+
+  .hero & {
+    @include regular18;
+    gap: 14px;
+    color: $color-blue-500;
+    margin: 20px 0 69px;
+  }
+
+  .card & {
+    @include regular12;
+    margin: 0;
+  }
+
+  .intro & {
+    margin-bottom: 0;
+  }
+
+  .pricing & {
+    @include regular16;
+    margin-bottom: 35.82px;
+  }
+}
+
+.hero {
+  height: calc-rem(1118px);
+  width: 100%;
+  background-image: url("../assets/svg/designer_1.svg");
+  background-repeat: no-repeat;
+  background-size: calc-rem(1490px) calc-rem(1161px);
+  background-position: bottom 0 right calc-rem(-466px);
+  padding-top: 309px;
+  padding-left: 162.4px;
+}
+
+.hero__btns {
+  @include flex(flex-start);
+  gap: 30px;
+}
+
+.info {
+  padding-top: 107.65px;
+  padding-bottom: 108px;
+}
+
+.info__wrapper {
+  width: 100%;
+  height: 525px;
+  background-image: url("../assets/svg/undraw_mobile_login_ikmv.svg");
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
+  background-size: contain;
+  margin: 0 auto;
+  @include flex($justify: flex-start);
+}
+
+.info__cards {
+  @include flex($justify: flex-start);
+  gap: calc-rem(30px);
+}
+
+.card {
+  max-width: calc-rem(255px);
+}
+
+.card__icon {
+  width: 36px;
+  height: 36px;
+  fill: black;
+}
+
+.intro {
+  padding: 122.44px calc($px + 5px) 131px calc($px + 25px);
+}
+
+.intro__wrapper {
+  width: 100%;
+  height: 315.85px;
+  background-image: url("../assets/svg/undraw_happy_news_hxmt.svg");
+  background-repeat: no-repeat;
+  background-position: top 0 left 0;
+  background-size: contain;
+  margin: 0 auto;
+  @include flex($justify: flex-end);
+}
+
+.pricing {
+  width: 100%;
+  background-image: url("../assets/svg/Rectangle.svg");
+  background-position: center top 0;
+  background-repeat: no-repeat;
+  padding: 237.61px 0 172.73px;
+}
+
+.pricing__price-block {
+  margin-bottom: 60px;
+}
+
+.pricing__btn-block {
+  @include flex($direction: column);
+  row-gap: 9px;
+}
+
+.pricing__value {
+  @include medium50;
+  color: $color-blue-700;
+}
+
+.pricing__text {
+  color: $color-primary;
+  @include regular16;
+
+  .pricing__btn-block & {
+    color: $color-grey-600;
+    @include regular14;
+  }
+}

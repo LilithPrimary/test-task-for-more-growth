@@ -1,0 +1,13 @@
+.header {
+  @include flex();
+  position: fixed;
+  top: 0;
+  max-width: $mw;
+  width: 100%;
+  z-index: 1;
+}
+
+.header__container {
+  @include flex($justify: space-between);
+  padding: calc-rem(18px) $px;
+}

@@ -1,0 +1,67 @@
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin regular18() {
+  font-size: 18px;
+  font-weight: $font-regular;
+  line-height: 30px;
+}
+
+@mixin regular16() {
+  font-size: 16px;
+  font-weight: $font-regular;
+  line-height: 26px;
+}
+
+@mixin regular14() {
+  font-size: 14px;
+  font-weight: $font-regular;
+  line-height: 24px;
+}
+
+@mixin regular12() {
+  font-size: 12px;
+  font-weight: $font-regular;
+  line-height: 18px;
+}
+
+@mixin medium12() {
+  font-size: 12px;
+  font-weight: $font-medium;
+  line-height: 18px;
+}
+
+@mixin medium14() {
+  font-size: 14px;
+  font-weight: $font-medium;
+  line-height: 24px;
+}
+
+@mixin medium16() {
+  font-size: 16px;
+  font-weight: $font-medium;
+  line-height: 26px;
+}
+
+@mixin medium36() {
+  font-size: 36px;
+  font-weight: $font-medium;
+  line-height: 48px;
+}
+
+@mixin medium50() {
+  font-size: 50px;
+  font-weight: $font-medium;
+  line-height: 66px;
+  letter-spacing: 1px;
+}
+
+@mixin bold26() {
+  font-size: 26px;
+  font-weight: $font-bold;
+  line-height: 38px;
+}
