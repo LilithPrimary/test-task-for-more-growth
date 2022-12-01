@@ -1,6 +1,6 @@
 import './scss/main.scss';
 
-const changeHeaderScroll = () => {
+const app = () => {
   const closeMenu = () => {
     if (nav.classList.contains('nav_open')) {
       nav.classList.remove('nav_open');
@@ -39,4 +39,4 @@ const changeHeaderScroll = () => {
   navLinks.forEach((el) => el.addEventListener('click', closeMenu));
 };
 
-changeHeaderScroll();
+app();
